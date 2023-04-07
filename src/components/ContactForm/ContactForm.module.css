@@ -1,0 +1,11 @@
+.formSection {
+  width: 400px;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  outline: 1px solid black;
+}
