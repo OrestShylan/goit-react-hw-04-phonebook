@@ -24,13 +24,14 @@ export const App = () => {
       alert(`${newContact.name} is already in contacts.`);
       return false;
     }
-    setContacts([...contacts, { ...newContact, id: uuid() }]);
+    setContacts(prevState => [...contacts, { ...newContact, id: uuid() }]);
     return true;
   };
 
   const handleRemoveContact = id => {
-    const newContacts = contacts.filter(contact => contact.id !== id);
-    setContacts(newContacts);
+    setContacts(prevState => contacts.filter(contact => contact.id !== id));
+    // const newContacts = contacts.filter(contact => contact.id !== id);
+    // setContacts(newContacts);
   };
 
   const handleFilterChange = filter => setFilter(filter);
